@@ -1,0 +1,115 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Excel_ProtectUnProtectSheet" this:Excel_ProtectUnProtectSheet.in_Protect="True" this:Excel_ProtectUnProtectSheet.in_Password="12345" this:Excel_ProtectUnProtectSheet.in_SheetName="January 2020" this:Excel_ProtectUnProtectSheet.in_ExcelFilePath="C:\Users\BenjaminTan\Desktop\Tracking of Enquiries Received_2020_1H.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Set as True if Protect." Name="in_Protect" Type="InArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="Password of Sheet" Name="in_Password" Type="InArgument(x:String)" />
+    <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExcelFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>941,951</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>Microsoft.Office.Interop.Excel</x:String>
+      <x:String>Microsoft.Office.Core</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="VBA to Protect or UnProtect an Excel Worksheet" DisplayName="Excel_ProtectUnProtectSheet" sap:VirtualizedContainerService.HintSize="755,535" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Var" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Var]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Test</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[in_Protect]" DisplayName="Check if Protect or UnProtect" sap:VirtualizedContainerService.HintSize="713,312" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="    Dim excel As Microsoft.Office.Interop.Excel.Application&#xA;    Dim wb As Microsoft.Office.Interop.Excel.Workbook&#xA;    Dim ws As Microsoft.Office.Interop.Excel.Worksheet&#xA;    excel = New Microsoft.Office.Interop.Excel.Application&#xA;&#xA;    wb = excel.Workbooks.Open(FullFilePath, [ReadOnly]:=False)&#xA;    excel.Visible = False&#xA;&#xA;    ws = CType(wb.Sheets(SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;    ws.Activate()&#xA;&#x9;ws.Protect(Password)&#xA; wb.Save()&#xA;    wb.Close()&#xA;    excel.Quit()&#xA;" DisplayName="Protect Sheet" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+          <ui:InvokeCode.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="FullFilePath">[in_ExcelFilePath]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="SheetName">[in_SheetName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Password">[in_Password]</InArgument>
+          </ui:InvokeCode.Arguments>
+        </ui:InvokeCode>
+      </If.Then>
+      <If.Else>
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="    Dim excel As Microsoft.Office.Interop.Excel.Application&#xA;    Dim wb As Microsoft.Office.Interop.Excel.Workbook&#xA;    Dim ws As Microsoft.Office.Interop.Excel.Worksheet&#xA;    excel = New Microsoft.Office.Interop.Excel.Application&#xA;&#xA;    wb = excel.Workbooks.Open(FullFilePath, [ReadOnly]:=False)&#xA;    excel.Visible = False&#xA;&#xA;    ws = CType(wb.Sheets(SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;    ws.Activate()&#xA;&#x9;ws.UnProtect(Password)&#xA; wb.Save()&#xA;    wb.Close()&#xA;    excel.Quit()&#xA;" DisplayName="UnProtect Sheet" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+          <ui:InvokeCode.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="FullFilePath">[in_ExcelFilePath]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="SheetName">[in_SheetName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Password">[in_Password]</InArgument>
+          </ui:InvokeCode.Arguments>
+        </ui:InvokeCode>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
